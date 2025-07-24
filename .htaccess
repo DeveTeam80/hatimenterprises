@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://hatimenterprises.in/$1 [R=301,L] 
+RewriteCond %{hatimenterprises.in [NC]
+RewriteRule ^(.*)$ https://hatimenterprises.in/$1 [R=301,L] 
+
+#user friendly urls
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]
+
+ErrorDocument 404 /error404.html
+
+Redirect 301 /index https://www.sofafabricsindia.com
