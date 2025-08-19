@@ -1005,68 +1005,97 @@
 
 ***/
 
-.brand-section{
-	position:relative;
-	
+.brand-section {
+  position: relative;
 }
 
-.brand-section .animation_mode{
-	position:relative;
-	min-height:115px;
-	/* width:400%;
-	-webkit-animation: marquee 32s linear infinite;
-	animation: marquee 32s linear infinite; */
+.brand-section .animation_mode {
+  position: relative;
+  min-height: 115px;
 }
 
-.brand-section .outer-container{
-	position:relative;
-	padding:15px 0px 15px;
-	border-top:1px dotted rgba(var(--black-color-rgb), 0.15);
-	border-bottom:1px dotted rgba(var(--black-color-rgb), 0.15);
+.brand-section .outer-container {
+  position: relative;
+  padding: 15px 0;
+  border-top: 1px dotted rgba(var(--black-color-rgb), 0.15);
+  border-bottom: 1px dotted rgba(var(--black-color-rgb), 0.15);
 }
 
-.brand-section .marque-box{
-	position:relative;
-	z-index:1;
-	padding:100px 0px;
-	
-	-webkit-animation: marquee 32s linear infinite;
-    animation: marquee 32s linear infinite;
+.brand-section .marque-box {
+  position: relative;
+  z-index: 1;
+  padding: 20px 0; /* reduced from 100px */
+  display: flex;
+  align-items: center;
+  animation: marquee 32s linear infinite;
+  white-space: nowrap;
 }
 
-.brand-section .marque-box div{
-	position:relative;
+.brand-section h1 {
+  padding: 10px 30px;
+  line-height: 1em;
+  font-weight: 400;
+  display: inline-block;
+  font-size: var(--font-60);
+  color: rgba(var(--black-color-rgb), 0.15);
+  font-family: var(--font-family-Outfit);
 }
 
-.brand-section h1{
-	position:relative;
-	padding:10px 30px;
-	line-height:1em;
-	top:10px;
-	font-weight:400;
-	display:inline-block;
-	font-size:var(--font-60);
-	color:rgba(var(--black-color-rgb), 0.15);
-	font-family: var(--font-family-Outfit);
+.brand-section span {
+  font-style: normal;
+  color: transparent;
+  font-weight: 600;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.20);
+  font-family: var(--font-family-Roboto);
 }
 
-.brand-section span{
-	position:relative;
-	font-style:normal;
-	color: transparent;
-	font-weight:600;
-	-webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgba(0, 0, 0, 0.20);
-	font-family:var(--font-family-Roboto);
+.brand-section strong {
+  font-weight: 400;
+  color: var(--main-color);
 }
 
-.brand-section strong{
-	font-weight:400;
-	color: var(--main-color);
+.brand-section img {
+  margin: 0px 20px;
+  max-height: 80px;
+  object-fit: contain;
 }
 
-.brand-section img{
-	margin:0px 40px 0px;
+/* On mobile, switch to grid instead */
+@media (max-width: 575px) {
+  .brand-section .outer-container {
+    padding: 5px 0; /* Reduced vertical padding */
+  }
+
+  .brand-section .marque-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 5px;
+    animation: none; 
+    white-space: normal;
+    justify-items: center;
+  }
+
+  .brand-section img {
+    margin: 0 auto; /* Center images horizontally */
+    max-height: 40px; /* Further reduced max height */
+  }
+}
+/* Styling for the new brand carousel */
+.brand-section .brand-carousel .brand-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    padding: 5px;
+}
+
+.brand-section .brand-carousel .brand-box img {
+    max-height: 60px; /* Adjust size of logos */
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+    margin: 0; /* Remove any previous margins */
 }
 
 /*** 
